@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% block title %}Ponte Solidária — Doe, conecte, ajude{% endblock %}
+
+{% block content %}
+<section class="hero" id="inicio">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <h1>Transforme o que você tem em ajuda para quem precisa.</h1>
+            <p>A Ponte Solidária conecta pessoas que querem doar alimentos e roupas com pessoas que precisam deles.</p>
+            <div class="hero-actions">
+                <a class="button button-primary" href="{{ url_for('cadastrar_doacao') }}">Quero doar <span aria-hidden="true">→</span></a>
+                <a class="button button-secondary" href="{{ url_for('listar_doacoes') }}">Ver doações</a>
+            </div>
+        </div>
+
+        <div class="hero-box">
+            <span class="hero-box-icon" aria-hidden="true">♥</span>
+            <h2>Uma pequena doação pode ajudar muito.</h2>
+            <p>Alimentos e roupas em bom estado podem fazer a diferença para outra pessoa.</p>
+        </div>
+    </div>
+</section>
+
+<section class="how-section section" id="como-funciona">
+    <div class="container">
+        <div class="section-heading centered">
+            <h2>Como funciona</h2>
+            <p>Em três passos, sua doação chega a quem realmente precisa.</p>
+        </div>
+        <div class="steps-grid">
+            <article class="step-card">
+                <span class="step-number">1</span>
+                <h3>Doe</h3>
+                <p>Cadastre alimentos ou roupas que você não utiliza mais.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number">2</span>
+                <h3>Conecte</h3>
+                <p>Pessoas que precisam podem encontrar sua doação.</p>
+            </article>
+            <article class="step-card">
+                <span class="step-number">3</span>
+                <h3>Ajude</h3>
+                <p>Combine a entrega e transforme sua doação em ajuda real.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<section class="donations-section section" id="doacoes">
+    <div class="container">
+        <div class="section-heading heading-row">
+            <div>
+                <h2>Doações disponíveis</h2>
+                <p>Veja alguns exemplos de itens que podem ser encontrados na plataforma.</p>
+            </div>
+        </div>
+
+        <div class="donations-grid">
+            {% for doacao in doacoes %}
+                {% include "partials/doacao_card.html" %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

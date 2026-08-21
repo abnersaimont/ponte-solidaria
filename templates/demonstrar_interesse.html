@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}Tenho interesse — Ponte Solidária{% endblock %}
+
+{% block content %}
+<section class="page-section form-section">
+    <div class="container form-container">
+        <a class="back-link" href="{{ url_for('detalhe_doacao', doacao_id=doacao.id) }}">← Voltar para a doação</a>
+
+        <div class="page-heading">
+            <h1>Tenho interesse</h1>
+            <p>Preencha seus dados para demonstrar interesse nesta doação.</p>
+        </div>
+
+        <div class="selected-donation">
+            <span>Você tem interesse em:</span>
+            <strong>{{ doacao.titulo }}</strong>
+            <p>{{ doacao.categoria }} • {{ doacao.bairro }}</p>
+        </div>
+
+        {% if erro %}
+            <div class="form-error" role="alert">{{ erro }}</div>
+        {% endif %}
+
+        <form class="donation-form" method="post" novalidate>
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input id="nome" name="nome" type="text" value="{{ dados.nome }}" placeholder="Digite seu nome" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contato">Contato</label>
+                <input id="contato" name="contato" type="text" value="{{ dados.contato }}" placeholder="Telefone, WhatsApp ou e-mail" required>
+                <small>Seu contato não será exibido publicamente.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem <span class="optional-label">(opcional)</span></label>
+                <textarea id="mensagem" name="mensagem" rows="5" placeholder="Ex.: Olá! Tenho interesse nesta doação e gostaria de combinar a retirada.">{{ dados.mensagem }}</textarea>
+            </div>
+
+            <button class="button button-primary publish-button" type="submit">Enviar interesse</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

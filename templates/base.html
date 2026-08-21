@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A Ponte Solidária conecta pessoas que querem doar alimentos e roupas com quem precisa.">
+    <title>{% block title %}Ponte Solidária{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="{{ url_for('index') }}" aria-label="Ponte Solidária - início">
+                <span>Ponte Solidária</span>
+            </a>
+
+            <nav class="main-nav" aria-label="Navegação principal">
+                <a href="{{ url_for('index') }}">Início</a>
+                <a href="{{ url_for('listar_doacoes') }}">Doações</a>
+                <a href="{{ url_for('index') }}#como-funciona">Como funciona</a>
+                <a href="#sobre">Sobre</a>
+            </nav>
+
+            <a class="button button-small button-primary header-action" href="{{ url_for('cadastrar_doacao') }}">Quero doar</a>
+        </div>
+    </header>
+
+    <main>{% block content %}{% endblock %}</main>
+
+    <footer class="site-footer" id="sobre">
+        <div class="container footer-inner">
+            <a class="brand brand-footer" href="{{ url_for('index') }}">
+                <span>Ponte Solidária</span>
+            </a>
+            <p>Tecnologia a serviço da solidariedade.</p>
+        </div>
+    </footer>
+</body>
+</html>

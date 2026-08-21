@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Interesse enviado — Ponte Solidária{% endblock %}
+
+{% block content %}
+<section class="page-section confirmation-section">
+    <div class="container confirmation-container">
+        <div class="confirmation-card">
+            <span class="confirmation-icon" aria-hidden="true">✓</span>
+            <h1>Interesse enviado!</h1>
+            <p>Sua solicitação foi registrada. Agora o doador poderá visualizar seu interesse e entrar em contato para combinar a entrega.</p>
+            <div class="confirmation-actions">
+                <a class="button button-primary" href="{{ url_for('listar_doacoes') }}">Ver outras doações</a>
+                <a class="button button-secondary" href="{{ url_for('index') }}">Voltar ao início</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

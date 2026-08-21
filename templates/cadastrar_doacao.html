@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% block title %}Faça uma doação — Ponte Solidária{% endblock %}
+
+{% block content %}
+<section class="page-section form-section">
+    <div class="container form-container">
+        <div class="page-heading">
+            <h1>Faça uma doação</h1>
+            <p>Cadastre um alimento ou uma roupa que você deseja doar. É simples e pode fazer a diferença para alguém.</p>
+        </div>
+
+        {% if erro %}
+            <div class="form-error" role="alert">{{ erro }}</div>
+        {% endif %}
+
+        <form class="donation-form" method="post" novalidate>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <select id="categoria" name="categoria" required>
+                    <option value="">Selecione uma categoria</option>
+                    <option value="Alimentos" {% if dados.categoria == "Alimentos" %}selected{% endif %}>Alimentos</option>
+                    <option value="Roupas" {% if dados.categoria == "Roupas" %}selected{% endif %}>Roupas</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="titulo">Título da doação</label>
+                <input id="titulo" name="titulo" type="text" value="{{ dados.titulo }}" placeholder="Ex.: Cesta básica" required>
+            </div>
+
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <textarea id="descricao" name="descricao" rows="5" placeholder="Ex.: Cesta contendo arroz, feijão, macarrão e óleo." required>{{ dados.descricao }}</textarea>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="quantidade">Quantidade</label>
+                    <input id="quantidade" name="quantidade" type="text" value="{{ dados.quantidade }}" placeholder="Ex.: 1 cesta ou 8 peças" required>
+                </div>
+                <div class="form-group">
+                    <label for="bairro">Bairro</label>
+                    <input id="bairro" name="bairro" type="text" value="{{ dados.bairro }}" placeholder="Informe apenas o bairro" required>
+                    <small>Não informe seu endereço completo.</small>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="nome_doador">Nome do doador</label>
+                    <input id="nome_doador" name="nome_doador" type="text" value="{{ dados.nome_doador }}" placeholder="Ex.: João" required>
+                </div>
+                <div class="form-group">
+                    <label for="contato">Contato</label>
+                    <input id="contato" name="contato" type="text" value="{{ dados.contato }}" placeholder="Telefone, WhatsApp ou e-mail" required>
+                    <small>Seu contato não será exibido publicamente.</small>
+                </div>
+            </div>
+
+            <button class="button button-primary publish-button" type="submit">Publicar doação</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

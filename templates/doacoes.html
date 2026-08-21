@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Doações disponíveis — Ponte Solidária{% endblock %}
+
+{% block content %}
+<section class="page-section donations-section">
+    <div class="container">
+        <div class="page-heading">
+            <h1>Doações disponíveis</h1>
+            <p>Encontre alimentos e roupas disponíveis para doação.</p>
+        </div>
+
+        <div class="filters" aria-label="Filtrar doações por categoria">
+            <button class="filter-button active" type="button" data-filter="todas">Todas</button>
+            <button class="filter-button" type="button" data-filter="alimentos">Alimentos</button>
+            <button class="filter-button" type="button" data-filter="roupas">Roupas</button>
+        </div>
+
+        <div class="donations-grid" id="lista-doacoes">
+            {% for doacao in doacoes %}
+                {% include "partials/doacao_card.html" %}
+            {% endfor %}
+        </div>
+        <p class="empty-message" id="sem-resultados" hidden>Nenhuma doação encontrada nesta categoria.</p>
+    </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/filtros.js') }}"></script>
+{% endblock %}

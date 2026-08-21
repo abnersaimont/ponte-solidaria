@@ -1,0 +1,14 @@
+<article class="donation-card" data-categoria="{{ doacao.categoria|lower }}">
+    <div class="donation-body">
+        <span class="category-badge">{{ doacao.categoria }}</span>
+        <h3>{{ doacao.titulo }}</h3>
+        <p>{{ doacao.descricao_curta }}</p>
+        <div class="card-info">
+            <span><strong>Quantidade:</strong> {{ doacao.quantidade }}</span>
+            <span class="location"><span aria-hidden="true">⌖</span> {{ doacao.bairro }}</span>
+        </div>
+        <a class="card-button" href="{{ url_for('detalhe_doacao', doacao_id=doacao.id) }}">
+            Ver doação <span aria-hidden="true">→</span>
+        </a>
+    </div>
+</article>

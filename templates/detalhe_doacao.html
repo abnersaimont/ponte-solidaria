@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block title %}{{ doacao.titulo }} — Ponte Solidária{% endblock %}
+
+{% block content %}
+<section class="page-section detail-section">
+    <div class="container detail-container">
+        <a class="back-link" href="{{ url_for('listar_doacoes') }}">← Voltar para doações</a>
+
+        <article class="detail-card">
+            <span class="category-badge">{{ doacao.categoria }}</span>
+            <h1>{{ doacao.titulo }}</h1>
+            <p class="detail-description">{{ doacao.descricao }}</p>
+
+            <dl class="detail-list">
+                <div>
+                    <dt>Quantidade</dt>
+                    <dd>{{ doacao.quantidade }}</dd>
+                </div>
+                <div>
+                    <dt>Bairro</dt>
+                    <dd>{{ doacao.bairro }}</dd>
+                </div>
+                <div>
+                    <dt>Status</dt>
+                    <dd><span class="status-badge">{{ doacao.status }}</span></dd>
+                </div>
+            </dl>
+
+            <a class="button button-primary interest-button" href="{{ url_for('demonstrar_interesse', doacao_id=doacao.id) }}">Tenho interesse</a>
+        </article>
+    </div>
+</section>
+{% endblock %}
