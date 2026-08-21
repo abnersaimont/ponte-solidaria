@@ -37,3 +37,13 @@ desktop.ini
 build/
 dist/
 *.egg-info/
+
+# Ferramentas da Cloudflare e do uv
+.wrangler/
+.dev.vars
+.dev.vars.*
+.python-version
+.venv-workers/
+python_modules/
+pylock.toml
+.local-tools/
