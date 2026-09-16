@@ -18,7 +18,7 @@
                 <a href="{{ url_for('index') }}">Início</a>
                 <a href="{{ url_for('listar_doacoes') }}">Doações</a>
                 <a href="{{ url_for('index') }}#como-funciona">Como funciona</a>
-                <a href="#sobre">Sobre</a>
+                <a href="{{ url_for('index') }}#sobre">Sobre</a>
             </nav>
 
             <a class="button button-small button-primary header-action" href="{{ url_for('cadastrar_doacao') }}">Quero doar</a>
@@ -27,12 +27,22 @@
 
     <main>{% block content %}{% endblock %}</main>
 
-    <footer class="site-footer" id="sobre">
+    <footer class="site-footer" id="contato">
         <div class="container footer-inner">
-            <a class="brand brand-footer" href="{{ url_for('index') }}">
-                <span>Ponte Solidária</span>
-            </a>
-            <p>Projeto 2º EM - E.E. Dr. Benedito Leite Ribeiro</p>
+            <div class="footer-about">
+                <a class="brand brand-footer" href="{{ url_for('index') }}">
+                    <span>Ponte Solidária</span>
+                </a>
+                <p>Projeto 2º EM - E.E. Dr. Benedito Leite Ribeiro</p>
+            </div>
+
+            <address class="footer-contact">
+                <strong>Contato</strong>
+                <span>Rua Dom Ranulfo, 250, Centro</span>
+                <span>Guaxupé - MG</span>
+                <a href="tel:+5535998642685">(35) 99864-2685</a>
+                <a href="mailto:pontesolidaria2026@gmail.com">pontesolidaria2026@gmail.com</a>
+            </address>
         </div>
     </footer>
 </body>

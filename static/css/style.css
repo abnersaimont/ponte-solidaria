@@ -211,16 +211,31 @@ h1, h2, h3 { line-height: 1.25; }
 .confirmation-card p { max-width: 580px; margin: 0 auto; color: var(--texto-claro); }
 .confirmation-actions { display: flex; justify-content: center; gap: 12px; margin-top: 28px; }
 
+.about-section { background: var(--branco); }
+.about-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 60px; align-items: start; }
+.about-grid .section-heading { margin-bottom: 18px; }
+.about-grid > div > p { margin: 0 0 14px; color: var(--texto-claro); }
+.about-info { border: 1px solid var(--borda); border-radius: 8px; }
+.about-info div { padding: 20px; }
+.about-info div + div { border-top: 1px solid var(--borda); }
+.about-info strong, .about-info span { display: block; }
+.about-info strong { margin-bottom: 5px; color: var(--verde-escuro); }
+.about-info span { color: var(--texto-claro); font-size: .92rem; }
+
 .site-footer { color: var(--branco); background: #244b38; }
-.footer-inner { min-height: 125px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.footer-inner { min-height: 190px; display: flex; align-items: flex-start; justify-content: space-between; gap: 50px; padding-top: 35px; padding-bottom: 35px; }
 .brand-footer { color: var(--branco); }
-.footer-inner p { color: #ceddd5; font-size: .9rem; }
+.footer-about p { margin: 8px 0 0; color: #ceddd5; font-size: .9rem; }
+.footer-contact { display: flex; flex-direction: column; color: #ceddd5; font-size: .9rem; font-style: normal; }
+.footer-contact strong { margin-bottom: 5px; color: var(--branco); }
+.footer-contact a:hover { color: var(--branco); text-decoration: underline; }
 
 @media (max-width: 800px) {
     .main-nav { display: none; }
     .header-action { margin-left: auto; }
     .hero-grid { grid-template-columns: 1fr; gap: 35px; }
     .steps-grid, .donations-grid { grid-template-columns: 1fr; }
+    .about-grid { grid-template-columns: 1fr; gap: 30px; }
 }
 
 @media (max-width: 520px) {
@@ -240,6 +255,5 @@ h1, h2, h3 { line-height: 1.25; }
     .publish-button { width: 100%; }
     .confirmation-card { padding: 35px 20px; }
     .confirmation-actions { flex-direction: column; }
-    .footer-inner { min-height: 145px; align-items: flex-start; justify-content: center; flex-direction: column; }
-    .footer-inner p { margin: 0; }
+    .footer-inner { min-height: 145px; align-items: flex-start; justify-content: center; flex-direction: column; gap: 25px; }
 }
