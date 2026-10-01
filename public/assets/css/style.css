@@ -169,7 +169,6 @@ h1, h2, h3 { line-height: 1.18; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-error { margin-bottom: 20px; padding: 12px 15px; color: #7a2929; background: #fbeaea; border: 1px solid #e6bcbc; border-radius: 8px; }
 .publish-button { cursor: pointer; }
-.demo-notice { margin-bottom: 20px; padding: 14px 16px; color: var(--verde-escuro); background: var(--verde-claro); border: 1px solid #cee4d7; border-radius: 10px; font-size: .9rem; }
 .demo-result { margin: 18px 0 0; padding: 13px 16px; color: var(--verde-escuro); background: var(--verde-claro); border-radius: 9px; font-weight: 700; }
 .selected-donation { margin-bottom: 22px; padding: 24px; background: linear-gradient(135deg, var(--verde-escuro), var(--verde)); border-radius: 16px; box-shadow: var(--sombra-leve); }
 .selected-donation span { display: block; margin-bottom: 5px; color: #c7e1d3; font-size: .86rem; }
