@@ -68,10 +68,12 @@ h1, h2, h3 { line-height: 1.25; }
 }
 .hero-content > p { max-width: 610px; margin: 0; color: #53645b; font-size: 1.08rem; }
 .hero-actions { display: flex; gap: 12px; margin-top: 28px; }
-.hero-box { padding: 38px; color: var(--branco); background: var(--verde); border-radius: 14px; box-shadow: 0 12px 28px rgba(36, 90, 65, .16); border: 1px solid rgba(255,255,255,.18); }
-.hero-box-icon { display: inline-flex; align-items: center; justify-content: center; width: 46px; height: 46px; background: rgba(255,255,255,.14); border-radius: 50%; font-size: 1.55rem; }
-.hero-box h2 { margin: 12px 0 10px; font-size: 1.5rem; }
-.hero-box p { margin: 0; color: #e6f1eb; font-size: .95rem; }
+.hero-illustration { position: relative; overflow: hidden; min-height: 390px; background: #dcebe1; border: 1px solid rgba(36, 90, 65, .12); border-radius: 20px; box-shadow: 0 16px 34px rgba(36, 90, 65, .15); }
+.hero-illustration img { display: block; width: 100%; height: 390px; object-fit: cover; object-position: center; }
+.hero-caption { position: absolute; right: 18px; bottom: 18px; left: 18px; display: flex; align-items: center; justify-content: space-between; gap: 15px; padding: 14px 16px; color: var(--verde-escuro); background: rgba(255, 255, 255, .92); border-radius: 10px; }
+.hero-caption strong, .hero-caption span { display: block; }
+.hero-caption strong { font-size: .92rem; }
+.hero-caption span { color: var(--texto-claro); font-size: .78rem; white-space: nowrap; }
 
 .section { padding: 86px 0; }
 .section-heading { margin-bottom: 35px; }
@@ -80,7 +82,7 @@ h1, h2, h3 { line-height: 1.25; }
 .section-heading p { margin: 0; color: var(--texto-claro); }
 
 .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.step-card { padding: 28px; background: var(--branco); border: 1px solid var(--borda); border-radius: 12px; box-shadow: 0 3px 12px rgba(36, 90, 65, .04); }
+.step-card { position: relative; padding: 28px; background: var(--branco); border: 1px solid var(--borda); border-radius: 12px; box-shadow: 0 3px 12px rgba(36, 90, 65, .04); }
 .step-number {
     display: flex;
     width: 40px;
@@ -95,12 +97,19 @@ h1, h2, h3 { line-height: 1.25; }
 }
 .step-card h3 { margin: 0 0 8px; font-size: 1.2rem; }
 .step-card p { margin: 0; color: var(--texto-claro); font-size: .94rem; }
+.step-symbol { position: absolute; top: 24px; right: 25px; color: #8bb39f; font-size: 1.8rem; font-weight: 600; }
 
 .donations-section { background: var(--fundo); }
 .heading-row { display: flex; justify-content: space-between; }
 .donations-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
 .donation-card { background: var(--branco); border: 1px solid var(--borda); border-radius: 12px; box-shadow: var(--sombra-leve); transition: transform .2s, box-shadow .2s; }
 .donation-card:hover { transform: translateY(-3px); box-shadow: 0 10px 24px rgba(36, 90, 65, .12); }
+.donation-visual { display: grid; place-items: center; height: 110px; overflow: hidden; color: rgba(36, 90, 65, .72); background: #dfeee5; border-bottom: 1px solid var(--borda); border-radius: 11px 11px 0 0; font-size: 3rem; font-weight: 400; }
+.visual-clothes, .visual-coat, .visual-pants { color: #956344; background: #f0dfd2; }
+.visual-rice { color: #83764a; background: #eee8c9; }
+.visual-milk { color: #5f7581; background: #e2ebee; }
+.visual-coat { background: #eadbd1; }
+.visual-pants { color: #526c7d; background: #dce7ec; }
 .donation-body { padding: 24px; }
 .category-badge {
     display: inline-block;
@@ -244,7 +253,8 @@ h1, h2, h3 { line-height: 1.25; }
     .hero-grid { grid-template-columns: 1fr; gap: 35px; }
     .steps-grid, .donations-grid { grid-template-columns: 1fr; }
     .about-grid { grid-template-columns: 1fr; gap: 30px; }
-    .hero-box { max-width: 560px; }
+    .hero-illustration { width: min(100%, 620px); min-height: 350px; }
+    .hero-illustration img { height: 350px; }
 }
 
 @media (max-width: 520px) {
@@ -253,6 +263,9 @@ h1, h2, h3 { line-height: 1.25; }
     .hero-grid { min-height: auto; padding: 55px 0; }
     .hero h1 { font-size: 2.35rem; }
     .hero-actions { flex-direction: column; }
+    .hero-illustration { min-height: 300px; border-radius: 14px; }
+    .hero-illustration img { height: 300px; }
+    .hero-caption { align-items: flex-start; flex-direction: column; gap: 2px; }
     .section { padding: 60px 0; }
     .page-section { padding: 45px 0 60px; }
     .filters { flex-wrap: wrap; }
