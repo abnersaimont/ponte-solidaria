@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Doações disponíveis na Ponte Solidária.">
+    <title>Doações disponíveis — Ponte Solidária</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+    <header class="site-header"><div class="container header-inner"><a class="brand" href="/">Ponte Solidária</a><nav class="main-nav" aria-label="Navegação principal"><a href="/">Início</a><a href="/doacoes.html">Doações</a><a href="/#como-funciona">Como funciona</a><a href="/#sobre">Sobre</a></nav><a class="button button-small button-primary header-action" href="/quero-doar.html">Quero doar</a></div></header>
+    <main>
+        <section class="page-section donations-section">
+            <div class="container">
+                <div class="page-heading"><h1>Doações disponíveis</h1><p>Encontre alimentos e roupas disponíveis para doação.</p></div>
+                <div class="filters" aria-label="Filtrar doações por categoria"><button class="filter-button active" type="button" data-filter="todas">Todas</button><button class="filter-button" type="button" data-filter="alimentos">Alimentos</button><button class="filter-button" type="button" data-filter="roupas">Roupas</button></div>
+                <div class="donations-grid" id="lista-doacoes">
+                    <article class="donation-card" data-categoria="alimentos"><div class="donation-body"><span class="category-badge">Alimentos</span><h3>Cesta básica</h3><p>Arroz, feijão, macarrão e óleo.</p><div class="card-info"><span><strong>Quantidade:</strong> 1 cesta</span><span class="location"><span aria-hidden="true">⌖</span> Centro</span></div><a class="card-button" href="/doacao.html?id=1">Ver doação <span>→</span></a></div></article>
+                    <article class="donation-card" data-categoria="roupas"><div class="donation-body"><span class="category-badge">Roupas</span><h3>Roupas infantis</h3><p>10 peças infantis em bom estado.</p><div class="card-info"><span><strong>Quantidade:</strong> 10 peças</span><span class="location"><span aria-hidden="true">⌖</span> Vila Nova</span></div><a class="card-button" href="/doacao.html?id=2">Ver doação <span>→</span></a></div></article>
+                    <article class="donation-card" data-categoria="alimentos"><div class="donation-body"><span class="category-badge">Alimentos</span><h3>Pacotes de arroz</h3><p>5 pacotes disponíveis.</p><div class="card-info"><span><strong>Quantidade:</strong> 5 pacotes de 1 kg</span><span class="location"><span aria-hidden="true">⌖</span> Jardim das Flores</span></div><a class="card-button" href="/doacao.html?id=3">Ver doação <span>→</span></a></div></article>
+                    <article class="donation-card" data-categoria="roupas"><div class="donation-body"><span class="category-badge">Roupas</span><h3>Agasalhos adultos</h3><p>Agasalhos para o período de frio.</p><div class="card-info"><span><strong>Quantidade:</strong> 3 peças</span><span class="location"><span aria-hidden="true">⌖</span> Santa Clara</span></div><a class="card-button" href="/doacao.html?id=4">Ver doação <span>→</span></a></div></article>
+                    <article class="donation-card" data-categoria="alimentos"><div class="donation-body"><span class="category-badge">Alimentos</span><h3>Leite em pó</h3><p>Latas fechadas e dentro da validade.</p><div class="card-info"><span><strong>Quantidade:</strong> 2 latas</span><span class="location"><span aria-hidden="true">⌖</span> Boa Vista</span></div><a class="card-button" href="/doacao.html?id=5">Ver doação <span>→</span></a></div></article>
+                    <article class="donation-card" data-categoria="roupas"><div class="donation-body"><span class="category-badge">Roupas</span><h3>Calças masculinas</h3><p>Calças jeans tamanho 42.</p><div class="card-info"><span><strong>Quantidade:</strong> 2 peças</span><span class="location"><span aria-hidden="true">⌖</span> Parque Verde</span></div><a class="card-button" href="/doacao.html?id=6">Ver doação <span>→</span></a></div></article>
+                </div>
+                <p class="empty-message" id="sem-resultados" hidden>Nenhuma doação encontrada nesta categoria.</p>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-inner"><div class="footer-about"><a class="brand brand-footer" href="/">Ponte Solidária</a><p>Projeto 2º EM - E.E. Dr. Benedito Leite Ribeiro</p></div><address class="footer-contact"><strong>Contato</strong><span>Rua Dom Ranulfo, 250, Centro</span><span>Guaxupé - MG</span><a href="tel:+5535998642685">(35) 99864-2685</a><a href="mailto:pontesolidaria2026@gmail.com">pontesolidaria2026@gmail.com</a></address></div></footer>
+    <script src="/assets/js/filtros.js"></script>
+</body>
+</html>

@@ -1,46 +1,35 @@
 # Ponte Solidária
 
-Aplicação web que conecta pessoas que possuem alimentos ou roupas para doar com pessoas que precisam dessas doações.
+Site demonstrativo de uma iniciativa social que conecta pessoas que possuem alimentos ou roupas para doar com pessoas que precisam dessas doações.
 
-O projeto utiliza Python, FastAPI e Jinja2 sobre o runtime Python da Cloudflare Workers. Nesta versão, as doações e manifestações de interesse são mantidas temporariamente em memória.
+O projeto é totalmente estático e utiliza apenas HTML, CSS e JavaScript. Os formulários são demonstrativos: nenhum dado é enviado ou armazenado.
 
-## Pré-requisitos
+## Estrutura
 
-- Uma conta na Cloudflare para realizar o deploy.
-- [uv](https://docs.astral.sh/uv/getting-started/installation/) instalado.
-- Node.js instalado, exigido pelo fluxo do Pywrangler/Wrangler.
+- `public/index.html`: página inicial;
+- `public/doacoes.html`: listagem e filtros visuais;
+- `public/doacao.html`: detalhes das doações fictícias;
+- `public/quero-doar.html`: formulário demonstrativo de doação;
+- `public/interesse.html`: formulário demonstrativo de interesse;
+- `public/assets/`: CSS e JavaScript.
 
-### Executando localmente
+## Executando localmente
 
-Na pasta raiz do projeto, instale as dependências e inicie o ambiente local compatível com Workers:
-
-```powershell
-uv sync
-uv run pywrangler dev
-```
-
-O endereço local será informado no terminal, normalmente `http://localhost:8787`.
-
-O comando antigo `python app.py` não é mais utilizado, pois a aplicação agora é iniciada pelo runtime local do Cloudflare Workers.
-
-### Deploy na Cloudflare
-
-Primeiro, autentique o Wrangler na sua conta Cloudflare:
+Para testar os caminhos exatamente como serão publicados, execute um servidor HTTP local apontando para a pasta `public`. Com o Wrangler disponível:
 
 ```powershell
-uv run pywrangler login
+npx wrangler pages dev public
 ```
 
-Depois, publique o Worker:
+O endereço local será informado no terminal, normalmente `http://localhost:8788`.
 
-```powershell
-uv run pywrangler deploy
-```
+## Deploy na Cloudflare Pages
 
-O deploy envia o Worker Python e os arquivos estáticos configurados em `wrangler.jsonc`. Nenhum token ou credencial deve ser salvo no repositório.
+Ao conectar este repositório pelo painel da Cloudflare Pages, utilize:
 
-## Limitação temporária dos dados
+- **Framework preset:** None;
+- **Production branch:** `main`;
+- **Build command:** deixe vazio ou use `exit 0`;
+- **Build output directory:** `public`.
 
-Ainda não existe banco de dados. As doações e manifestações de interesse criadas pela interface ficam apenas na memória do isolate que processou a requisição. Elas podem desaparecer a qualquer momento, não são compartilhadas de forma confiável entre isolates e sempre são perdidas em reinicializações ou novos deploys.
-
-Essa limitação é intencional nesta etapa. A persistência será implementada posteriormente com Cloudflare D1.
+Não são necessários Python, FastAPI, Jinja2, Workers, banco de dados ou variáveis de ambiente.

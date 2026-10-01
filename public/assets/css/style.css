@@ -184,6 +184,8 @@ h1, h2, h3 { line-height: 1.25; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .form-error { margin-bottom: 20px; padding: 12px 15px; color: #7a2929; background: #fbeaea; border: 1px solid #e6bcbc; border-radius: 5px; }
 .publish-button { cursor: pointer; }
+.demo-notice { margin-bottom: 20px; padding: 12px 15px; color: var(--verde-escuro); background: var(--verde-claro); border: 1px solid var(--borda); border-radius: 5px; font-size: .9rem; }
+.demo-result { margin: 18px 0 0; padding: 12px 15px; color: var(--verde-escuro); background: var(--verde-claro); border-radius: 5px; font-weight: bold; }
 
 .selected-donation { margin-bottom: 20px; padding: 20px; background: var(--verde-claro); border: 1px solid var(--borda); border-radius: 8px; }
 .selected-donation span { display: block; margin-bottom: 5px; color: var(--texto-claro); font-size: .9rem; }

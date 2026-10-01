@@ -1,17 +1,6 @@
 {
     "$schema": "node_modules/wrangler/config-schema.json",
     "name": "ponte-solidaria",
-    "main": "src/worker.py",
-    "compatibility_date": "2026-08-21",
-    "compatibility_flags": [
-        "python_workers",
-        "python_dedicated_snapshot"
-    ],
-    "assets": {
-        "directory": "./static/",
-        "binding": "ASSETS"
-    },
-    "observability": {
-        "enabled": true
-    }
+    "pages_build_output_dir": "./public",
+    "compatibility_date": "2026-10-01"
 }
